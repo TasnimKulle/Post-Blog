@@ -3,6 +3,9 @@ const postTitle=document.querySelector("#postTitle");
 const postUrl=document.querySelector("#postUrl");
 const postDesc=document.querySelector("#postArea")
 const postList=document.querySelector(".postList")
+window.onload = function(){
+    loadPost()
+}
 
 blogForm.addEventListener('submit',addPost);
 
@@ -40,6 +43,7 @@ function addPostToDOM(post){
     </span>
     `;
     postList.appendChild(li)
+    attachEventListeners(li,post)
 }
 function loadPost(){
     const posts=getFromLocalStorege();
@@ -58,6 +62,32 @@ function saveToLocalStorage(post){
     posts.push(post)
     localStorage.setItem("posts",JSON.stringify(posts))
 }
-document.addEventListener('DOMContentLoaded', function() {
-    loadPost();
-});
+
+function attachEventListeners(li,post){
+    const editBtn=li.querySelector('.edit-btn');
+    const dltBtn=li.querySelector('.delete-btn');
+    editBtn.addEventListener('click',function(){
+        handleEdit(post.id,li)
+    });
+}
+function handleEdit(postId,li){
+    const tpost=li.querySelector(".tpost")
+    const picPost=li.querySelector(".picPost");
+    const  desc=li.querySelector(".desc");
+    const newPostTitle=prompt("Edit Your  Post",tpost.textContent,picPost.textContent,desc.textContent);
+    if(newPostTitle!==null && newPostTitle.trim()!==''){
+        updatePost(postId,newPostTitle);
+        tpost.textContent= newPostTitle
+    }
+}
+function updatePost(id,newPost){
+    const posts=getFromLocalStorege()
+    const post=posts.find(post=>post.id==id)
+    if(post){
+        post.title=newPost
+        post.picPost=newPost
+        post.desc=newPost
+        localStorage.setItem('posts',JSON.stringify(posts))
+    }
+
+}
