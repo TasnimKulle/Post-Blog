@@ -52,3 +52,20 @@ h1{
     text-align: center;
     padding: 15px;
 }
+.postItem{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.picPost{
+    width: 450px;
+}
+.btn{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+}
+.edit-btn,.delete-btn{
+    padding: 10px;
+    width: 200px;
+}
