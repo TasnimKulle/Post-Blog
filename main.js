@@ -38,8 +38,8 @@ function addPostToDOM(post){
     <img class="picPost" src="${post.picture}">
     <p class="desc">${post.desc}</p>
     <span class="btn">
-    <button class="edit-btn">Edit<button>
-    <button class="delete-btn">Delete<button>
+    <button class="edit-btn">Edit</button>
+    <button class="delete-btn">Delete</button>
     </span>
     `;
     postList.appendChild(li)
