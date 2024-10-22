@@ -6,7 +6,7 @@ h1{
     text-align: center;
 }
 .container{
-    background-color: #f3f5f7;
+    background-color: #e1e1e1;
     max-width: 500px;
     margin: 50px auto;
     padding: 10px;
@@ -35,17 +35,21 @@ h1{
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid cadetblue;
+
 }
 #blog-form button{
  align-items: center;  
  padding: 20px;
- border: 1px solid gainsboro;
+ border: 1px solid #97a9fc;
  cursor: pointer;
+ background-color: #c5cef4;
+ border-radius: 5px;
 }
 .postList{
     background-color: #f3f4f5;
     max-width: 500px;
     margin: 50px auto;
+    border-radius: 10px;
     
 }
 .postList h2{
@@ -64,5 +68,5 @@ h1{
 .edit-btn,.delete-btn{
     padding: 10px;
     width: 100px;
-    /* margin: 50px auto; */
+    margin-bottom: 10px;
 }

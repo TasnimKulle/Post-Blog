@@ -33,7 +33,7 @@ function addPostToDOM(post) {
     li.className = 'postItem';
     li.dataset.id = post.id;
     li.innerHTML = `
-        <span class="tPost">${post.title}</span>
+        <h4 class="tPost">${post.title}</h4>
         <img class="picPost" src="${post.picture}">
         <p class="desc">${post.desc}</p>
         <span class="btn">
